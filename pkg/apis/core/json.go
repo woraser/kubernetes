@@ -25,6 +25,7 @@ var _ = json.Marshaler(&AvoidPods{})
 var _ = json.Unmarshaler(&AvoidPods{})
 
 // MarshalJSON panics to prevent marshalling of internal structs
+// 解析内部结构时需要抛出异常
 func (AvoidPods) MarshalJSON() ([]byte, error) { panic("do not marshal internal struct") }
 
 // UnmarshalJSON panics to prevent unmarshalling of internal structs
